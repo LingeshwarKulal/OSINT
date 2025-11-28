@@ -1,0 +1,73 @@
+# Penetration Testing Toolkit Configuration
+# SECURITY: Use environment variables for sensitive data
+
+general:
+  timeout: 10
+  threads: 10
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+  delay: 1
+  verbose: false
+
+subdomain:
+  wordlist: "data/wordlists/subdomains.txt"
+  dns_servers:
+    - "8.8.8.8"
+    - "1.1.1.1"
+    - "1.0.0.1"
+  threads: 10
+  timeout: 5
+
+# API keys are loaded from .env file (see .env.example)
+# Create a .env file with your actual API keys:
+# - SHODAN_API_KEY=your_shodan_api_key_here
+# - URLSCAN_API_KEY=your_urlscan_api_key_here
+# - API_SERVER_KEYS=your_api_server_keys_here
+
+shodan:
+  timeout: 30
+  max_results: 50
+
+urlscan:
+  timeout: 30
+
+port_scanner:
+  default_ports: "1-1000"
+  threads: 50
+  timeout: 1
+  service_detection: true
+
+vulnerability_scanner:
+  threads: 5
+  timeout: 10
+  follow_redirects: true
+  verify_ssl: false
+
+xss_detection:
+  test_level: 2
+  timeout: 10
+
+sqli_detection:
+  test_level: 2
+  timeout: 10
+  time_based_delay: 5
+
+password_attack:
+  threads: 5
+  timeout: 5
+  max_attempts: 1000
+
+wireless:
+  scan_timeout: 30
+  channel_hop: true
+
+output:
+  directory: "output"
+  format: "json"
+  save_screenshots: true
+  timestamp_files: true
+
+logging:
+  level: "INFO"
+  file: "logs/pentest.log"
+  max_size: "10MB"
+  backup_count: 5

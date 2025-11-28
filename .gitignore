@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# Configuration files with sensitive data
+config.yaml
+.env
+
+# Output files - scan results may contain sensitive data
+output/
+output/*.txt
+output/*.json
+output/*.html
+output/*.xml
+!output/.gitkeep
+data/wordlists/*.txt
+!data/wordlists/subdomains.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test Files (development only)
+test_*.py
+*_test.py
